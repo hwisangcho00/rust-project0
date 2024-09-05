@@ -3,5 +3,11 @@ use std::io;
 use std::io::Write;
 
 fn main() {
-    todo!();
+  println!("Welcome to cis1905 Hangman!");
+
+loop {
+  
 }
+
+}
+

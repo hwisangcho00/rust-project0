@@ -51,5 +51,26 @@ pub fn binary_search(arr: &[i32], query: i32) -> Option<u32> {
 ///
 /// example: rainfall([6, 8, -1, 1, -999, 4, 5, 6]) -> Some(5.0)
 pub fn rainfall(values: &[i32]) -> Option<f64> {
-    todo!();
+    let mut sum = 0;
+    let mut cnt = 0;
+    for &n in values {
+      if n == -999 {
+        if cnt == 0 {
+          return None
+        }
+        return Some(sum as f64 / cnt as f64);
+      }
+      
+      if n >= 0 {
+        sum += n;
+        cnt += 1;
+      }
+      
+    }
+
+    if cnt == 0 {
+      return None
+    }
+
+    return Some(sum as f64 / cnt as f64);
 }
